@@ -1,0 +1,81 @@
+/* РЕДАКТОР */
+.editor-container {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+/* ОБЛОЖКА */
+.cover-upload {
+  margin-bottom: 24px;
+}
+
+.cover-upload label {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px dashed #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #888;
+}
+
+.cover-upload label:hover {
+  border-color: #888;
+  color: #000;
+}
+
+.cover-upload input {
+  display: none;
+}
+
+.cover-preview {
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 24px;
+}
+
+/* ЗАГОЛОВОК */
+.editor-title {
+  font-size: 42px;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  outline: none;
+  border: none;
+}
+
+.editor-title:empty:before {
+  content: attr(data-placeholder);
+  color: #ccc;
+}
+
+/* ТЕКСТ */
+.editor-body {
+  font-size: 20px;
+  line-height: 1.8;
+  outline: none;
+  border: none;
+  min-height: 300px;
+  color: #292929;
+}
+
+.editor-body:empty:before {
+  content: attr(data-placeholder);
+  color: #ccc;
+}
+
+/* КНОПКА ПУБЛИКАЦИИ */
+.btn-publish {
+  background-color: #1a8917;
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-publish:hover {
+  background-color: #156912;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medium - Войти</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+  <!-- НАВБАР -->
+  <nav class="navbar">
+    <div class="nav-logo">Medium</div>
+  </nav>
+
+  <!-- ФОРМА -->
+  <div class="auth-container">
+
+    <h1 class="auth-title">Добро пожаловать!</h1>
+    <p class="auth-subtitle">Войдите или создайте аккаунт</p>
+
+    <!-- ТАБЫ -->
+    <div class="auth-tabs">
+      <button class="tab active" onclick="showTab('login')">Войти</button>
+      <button class="tab" onclick="showTab('register')">Регистрация</button>
+    </div>
+
+    <!-- ВХОД -->
+    <div id="login" class="auth-form">
+      <input type="email" placeholder="Email" id="login-email">
+      <input type="password" placeholder="Пароль" id="login-password">
+      <button class="btn-auth" onclick="login()">Войти</button>
+    </div>
+
+    <!-- РЕГИСТРАЦИЯ -->
+    <div id="register" class="auth-form" style="display:none">
+      <input type="text" placeholder="Имя пользователя" id="reg-username">
+      <input type="email" placeholder="Email" id="reg-email">
+      <input type="password" placeholder="Пароль" id="reg-password">
+      <button class="btn-auth" onclick="register()">Зарегистрироваться</button>
+    </div>
+
+  </div>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>

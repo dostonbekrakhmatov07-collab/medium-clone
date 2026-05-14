@@ -1,0 +1,99 @@
+/* ЛЕНТА */
+.feed-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  gap: 48px;
+}
+
+/* ПОСТЫ */
+.feed-posts {
+  flex: 1;
+}
+
+.post-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 24px 0;
+  border-bottom: 1px solid #e0e0e0;
+  gap: 24px;
+}
+
+.post-info {
+  flex: 1;
+}
+
+.post-author {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.post-author img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.post-author span {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.post-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.post-subtitle {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.post-meta {
+  font-size: 12px;
+  color: #888;
+}
+
+.post-image {
+  width: 160px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* САЙДБАР */
+.feed-sidebar {
+  width: 300px;
+}
+
+.feed-sidebar h3 {
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  background-color: #f2f2f2;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.tag:hover {
+  background-color: #e0e0e0;
+}

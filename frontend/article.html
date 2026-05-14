@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medium - Статья</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/article.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-logo">Medium</div>
+    <div class="nav-links">
+      <a href="feed.html">← Назад</a>
+      <a href="editor.html">Написать</a>
+    </div>
+  </nav>
+
+  <div class="article-container">
+    <h1 class="article-title" id="article-title">Загрузка...</h1>
+
+    <div class="article-author">
+      <div class="author-avatar" id="author-avatar">?</div>
+      <div class="author-info">
+        <span class="author-name" id="author-name"></span>
+        <span class="article-meta" id="article-meta"></span>
+      </div>
+    </div>
+
+    <div id="article-cover"></div>
+
+    <div class="article-content" id="article-content"></div>
+
+    <div class="article-claps">
+      <button class="clap-btn" onclick="clap()">👏</button>
+      <span id="clap-count">0</span>
+    </div>
+  </div>
+
+  <script>
+    let claps = 0;
+    function clap() {
+      claps++;
+      document.getElementById('clap-count').innerText = claps;
+    }
+
+    async function loadArticle() {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get('id');
+
+      if (!id) return;
+
+      try {
+        const response = await fetch(`http://localhost:5000/api/posts/${id}`);
+        const post = await response.json();
+
+        document.getElementById('article-title').innerText = post.title;
+        document.getElementById('author-name').innerText = post.username;
+        document.getElementById('author-avatar').innerText = post.username.substring(0, 2).toUpperCase();
+        document.getElementById('article-meta').innerText = new Date(post.created_at).toLocaleDateString('ru-RU');
+
+        if (post.cover_image) {
+          document.getElementById('article-cover').innerHTML = `
+            <img src="${post.cover_image}"
+            style="width:100%;border-radius:4px;margin-bottom:32px;"
+            alt="обложка">`;
+        }
+
+        document.getElementById('article-content').innerHTML = `<p>${post.content}</p>`;
+      } catch (err) {
+        document.getElementById('article-title').innerText = 'Ошибка загрузки!';
+      }
+    }
+
+    loadArticle();
+  </script>
+
+</body>
+</html>

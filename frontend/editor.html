@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medium - Редактор</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/editor.css">
+</head>
+<body>
+
+  <!-- НАВБАР -->
+  <nav class="navbar">
+    <div class="nav-logo">Medium</div>
+    <div class="nav-links">
+      <button class="btn-publish" onclick="publish()">Опубликовать</button>
+    </div>
+  </nav>
+
+  <!-- РЕДАКТОР -->
+  <div class="editor-container">
+
+    <!-- ОБЛОЖКА -->
+    <div class="cover-upload" id="cover-upload">
+      <input type="file" id="cover-input" accept="image/*" onchange="uploadCover(event)">
+      <label for="cover-input">+ Добавить обложку</label>
+    </div>
+    <img id="cover-preview" class="cover-preview" src="" alt="обложка" style="display:none">
+
+    <!-- ЗАГОЛОВОК -->
+    <div
+      class="editor-title"
+      contenteditable="true"
+      data-placeholder="Заголовок"
+    ></div>
+
+    <!-- ТЕКСТ -->
+    <div
+      class="editor-body"
+      contenteditable="true"
+      data-placeholder="Расскажите свою историю..."
+    ></div>
+
+  </div>
+
+  <script src="js/editor.js"></script>
+</body>
+</html>
